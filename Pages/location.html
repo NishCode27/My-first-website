@@ -1,0 +1,143 @@
+<head>
+    <style>
+        p {
+            color: rgb(94, 66, 219);
+            font-size: 25px;
+            padding-left: 20px;
+
+        }
+
+        img {
+            width: 350px;
+            height: 300px;
+            padding-left: 10px;
+
+
+        }
+
+        .mapouter {
+            width: 1000px;
+
+        }
+
+        .background {
+            background-image: url('../Images/Location/body image.jpg');
+            z-index: -1;
+            background-size: contain;
+
+        }
+
+
+        div.background {
+            /* background: url('body image.jpg') repeat; */
+            border: 2px solid black;
+        }
+
+        div.transbox {
+            margin: 20px;
+            background-color: #846592;
+            border: 1px solid rgb(8, 6, 8);
+            opacity: 0.8;
+        }
+
+
+
+
+
+        .mapouter {
+
+            padding-top: 20px;
+            position: relative;
+            text-align: right;
+            height: 500px;
+            width: 600px;
+        }
+
+
+        .gmap_canvas {
+            overflow: hidden;
+            background: none !important;
+            height: 500px;
+            width: 600px;
+        }
+
+
+        .container {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(21, 22, 19);
+            text-decoration: none;
+            font-size: 23px;
+        }
+
+        ul {
+            display: block;
+            margin: 0;
+        }
+
+        li {
+            float: left;
+            list-style-type: none;
+            padding: 10px 10px;
+        }
+
+        li a {
+            color: white;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        /* Change the link color to #111 (black) on hover */
+        ul li:hover {
+            background-color: rgb(27, 158, 235);
+            transition: 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <ul>
+            <li> <a href="..\index.html">Home</a> </li>
+            <li> <a href="..\Pages\Detail.html"> Details about Srilanka</a></li>
+            <li> <a href="..\Pages\location.html"> Map </a></li>
+            <li> <a href="..\Pages\Province.html"> Province/District</a></li>
+            <li> <a href="..\Pages\Todo.html"> To Do Lists </a> </li>
+        </ul>
+
+    </div>
+
+    <div class="background">
+
+        <div class="transbox">
+
+
+
+            <center>
+
+                <div class="mapouter">
+                    <div class="gmap_canvas">
+                        <iframe
+                            src="https://www.google.com/maps/d/u/0/embed?mid=1BaWsyaZ7ZKgzsw44bU2w8baPgnGtEB4h&ehbc=2E312F"
+                            width="640" height="480"></iframe>
+
+
+            </center>
+        </div>
+    </div>
+    <p> Find Some Interesting Pictures of Srilanka Here</p>
+    <img src="../Images/Location/pics5.jpg">
+    <img src="../Images/Location/pics3.jpg">
+    <img src="../Images/Location/pics2.jpg">
+    <img src="../Images/Location/pics.jpg">
+    <img src="../Images/Location/pics4.jpeg">
+    <img src="../Images/Location/int.jpeg">
+    <img src="../Images/Location/int2.jpg">
+    <img src="../Images/Location/int4.jpeg">
+    </div>
+</body>
