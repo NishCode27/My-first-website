@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='stylesheet' type='text/css' media='screen' href='../Stylesheets/Todo/todo.css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  
+
+    <link rel = "stylesheet" href = "../Stylesheets/Todo/todo.css">
+
+    <style>
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        h1 {
+        	padding-top: 40px;
+        }
+
+        li {
+		float: left;
+		text-decoration: none;
+		list-style-type: none;
+	  }
+
+	li a, .dropbtn {
+		display: inline-block;
+		color: rgb(15, 15, 15);
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		
+	  }
+	  
+	  li a:hover, .dropdown:hover .dropbtn {
+		background-color: rgb(110, 112, 145);
+    color: #fff;  
+	  }
+	  
+	  li.dropdown {
+		display: inline-block;
+	  }
+	  
+	  .dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #faf9f9;
+		/* min-width: 160px; */
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		/* z-index: 1; */
+		float:left;
+	  }
+	  .dropdown-content ul {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin-left: -50px;
+    }
+	  .dropdown-content ul li a {
+		background-color: #fff;
+		/* padding: 12px 16px; */
+		text-decoration: none;
+		display: block;
+		text-align: left;
+    font-family: 'Comic Sans MS', fantasy;
+	  }
+	  
+	  .dropdown-content ul li a:hover {background-color: #0c0b0b; color: #fff}
+	  
+	  .dropdown:hover .dropdown-content {
+		display: block;
+	  } 
+
+    .container1{
+      display: flex;
+      flex-direction: column;
+      width: 80vw;
+      
+    }
+
+    .container1 div {
+      margin: auto;
+    }
+
+    .container1 ol{
+      display: flex;
+      flex-direction:  column;
+      margin: auto;
+    
+    }
+
+    .container1 #input{
+      margin-bottom: 20px;
+    }
+
+    input {
+      border-radius: 10px;
+      border: 0px solid ;
+      padding:7px;
+    }
+
+    input[type='submit'], button{
+      padding: 5px 10px;
+      border-radius: 20px;
+      border: 0px solid ;
+      background-color: rgb(37, 90, 90);
+      border: 2px #fff solid;
+      color:rgb(222, 231, 231)
+    }
+
+    #app ol li {
+      font-family: 'Arial', serif;
+      color: rgb(41, 8, 8);
+      font-weight: bold;
+      font-style : italic;
+      font-size: 15px;
+    }
+  
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li> <a href="..\index.html">Home</a>  </li>
+    
+            <li> <a href="..\Pages\Detail.html"> Details about Srilanka</a> </li>
+            
+          <li class="dropdown">
+              <a href="..\Pages\province.html" class="dropbtn"> Provinces </a>
+              <div class="dropdown-content">
+                <ul>
+                  <li><a href="province.html" target = "_blank"> Central Province</a></li>
+                  <li><a href="province.html" target = "_blank"> North Central Province</a></li>
+                  <li><a href= "province.html" target = "_blank"> Northern Province </a></li>
+                  <li><a href= "province.html" target = "_blank"> Eastern Province</a></li>
+                  <li><a href= "province.html" target = "_blank"> Western Province</a></li>
+                  <li><a href= "province.html" target = "_blank"> North Western Province</a></li>
+                  <li><a href="province.html" target = "_blank"> Southern Province</a></li>
+                  <li><a href= "province.html" target = "_blank"> Sabaragamuwa Province</a></li>
+                  <li><a href= "province.html" target = "_blank"> Uva Province</a></li>
+                </ul>
+              </li>
+            <li> <a href="..\Pages\location.html"> Map 
+            </a> </li>
+            <li> <a href="..\Pages\Todo.html"> To Do Lists </a> </li>
+          </ul>
+          </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    
+
+
+    <div id="app" class="container1">
+        <h1>Todo List</h1>
+
+        <div v-if="!isEditing" id = "input">
+            <input type="text" v-model="todo">
+            <input type="submit" value="Add" @click="storeTodo">
+        </div>
+        <div v-else>
+            <input type="text" v-model="todo">
+            <input type="submit" value="Update" @click="updateTodo">
+        </div>
+
+        <ol>
+            <li v-for="(todo, index) in todos">
+                {{ todo }}
+                <button @click="editTodo(index, todo)">Edit</button>
+                <button @click="removeTodo(index)">Delete</button>
+            </li>
+        </ol>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="../Vuejs/todo.js">
+       
+    </script>
+</body>
+</html>
